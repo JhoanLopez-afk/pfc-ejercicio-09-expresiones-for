@@ -8,13 +8,15 @@ class Ejercicio {
 
   // Cuántas vocales (a, e, i, o, u) tiene s, en mayúscula o minúscula.
   def contarVocales(s: String): Int = {
-    0 // Completar
+    val vocales: Seq[Char] = Seq('a','e','i','o','u','A','E','I','O','U')
+    s.count(c => vocales.contains(c))
   }
 
   // Si s se lee igual al revés, sin distinguir mayúsculas y sin contar
   // los espacios.
   def esPalindromo(s: String): Boolean = {
-    false // Completar
+    val pal = s.toLowerCase.filter(c => c != ' ')
+    (pal == pal.reverse)
   }
 
   // La suma de los múltiplos de k entre 1 y n, ambos incluidos. k >= 1.
